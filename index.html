@@ -12,102 +12,137 @@
       rel="stylesheet"
     />
     <style>
-      body {
+      body{
         margin: 0;
-      }
+    }
+  /* CSS for the navbar */
+  .navbar {
+    background-color:#6F6AF7;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+  }
 
-      nav img {
+  .navbar-logo {
+    display: block;
+  }
+ 
+  .navbar-logo img{
+    width: 50%;
+   }
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-menu li {
+    margin-left: 25px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+  }
+
+  .navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter Tight', sans-serif;
+
+  }
+
+  .navbar-search {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-search input[type='text'] {
+    padding: 9px;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    margin-left: 2%;
+  }
+
+  .navbar-search button {
+    padding: 9px 0 9px 0;
+    border: none;
+    background-color: #fff;
+    color: black;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+  }
+
+  .navbar-search-icon {
+    margin-right: 5px;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin-left: 1%;
+  }
+
+  .navbar-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+  }
+
+  /* Media queries for responsiveness */
+  @media (max-width: 724px) {
+    .navbar-menu li {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+      }
+      .navbar-logo {
         display: block;
-        width: 120px;
-        height: 100%;
+        margin-right: 2%;
       }
-
-      .navbar {
-        border: 1px solid red;
-        background-color: #6f6af7;
-        color: #fff;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 13px;
+      .navbar-logo img{
         width: 100%;
-      }
+       }
+       .navbar-toggle {
+        width: 55px;
+        
+       }
+  }
+  @media (max-width: 668px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .navbar-logo img{
+        width: 70%;
+       }
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
 
-      .navbar-menu {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-        font-size: 20px;
-        font-family: 'DM Sans', sans-serif;
-        font-family: 'Inter Tight', sans-serif;
-      }
-      select {
-        background-color: #6f6af7;
-        font-size: 19px;
-        font-family: 'DM Sans', sans-serif;
-        font-family: 'Inter Tight', sans-serif;
-        color: #fff;
-        margin-top: -2.2%;
-        margin-left: -4%;
-      }
-      .navbar-menu li {
-        margin-left: 25px;
-      }
+    .navbar-menu.active {
+      display: flex;
+    }
 
-      .navbar-menu li a {
-        color: #fff;
-        text-decoration: none;
-      }
+    .navbar-search {
+      margin: 10px 0 10px 0;
+    }
 
-      .navbar-search {
-        display: flex;
-        align-items: center;
-      }
-
-      .navbar-search input{
-        padding: 7px;
-        border: none;
-        border-radius: 15px;
-      }
-      .fa-solid {
-        padding: 4px;
-        border: none;
-        border-radius: 15px;
-        background-color: #fff;
-        color: #333;
-        margin-left: -15%;
-      }
-      .navbar-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        width: 30px;
-        height: 23px;
-      }
-
-      .navbar-toggle .bar {
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-      }
-      /* Media queries for responsiveness */
-      @media (max-width: 468px) {
-        .navbar {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .navbar-menu {
-          display: none;
-        }
-        .navbar-search {
-          margin: 3% 0 3% 0;
-        }
-      }
-
+    .navbar-toggle {
+      width: 40px;
+    }
+  }
+    
       main {
         border: 1px solid red;
         width: 100%;
@@ -120,6 +155,8 @@
         height: 20vh;
         background-color: green;
       }
+      /* Media queries for responsiveness */
+     
     </style>
     <script
       src="https://kit.fontawesome.com/5a0226f906.js"
@@ -128,22 +165,20 @@
   </head>
   <body>
     <nav class="navbar">
-      <a href="#" class="navbar-logo"><img src="/images/dappr.jpg" alt="" /></a>
+      <a href="#" class="navbar-logo"><img src="/images/dappr.jpg" alt=""></a>
       <ul class="navbar-menu">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#">About&nbsp;Us</a></li>
         <li><a href="#">Information</a></li>
-        <li>
-          <section>
-            <select name="" id="">
-              <option value="">More</option>
-            </select>
-          </section>
-        </li>
+        <li><a href="#">More</a></li>
       </ul>
       <div class="navbar-search">
         <input type="text" placeholder="Search" />
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <button>
+          <div class="navbar-search-icon">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </div>
+        </button>
       </div>
       <div class="navbar-toggle">
         <div class="bar"></div>
