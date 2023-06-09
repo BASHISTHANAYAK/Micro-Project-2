@@ -15,8 +15,16 @@
       body{
         margin: 0;
     }
+    #nav-parent{
+      border: 3px solid red;
+      width: 100%;
+      height: auto;
+      position: fixed;
+    }
   /* CSS for the navbar */
   .navbar {
+    width: 100%;
+    margin: auto;
     background-color:#6F6AF7;
     color: #fff;
     display: flex;
@@ -24,6 +32,7 @@
     align-items: center;
     padding: 10px;
     font-size: 20px;
+     
   }
 
   .navbar-logo {
@@ -111,7 +120,7 @@ main {
  gap:4% ;
   align-items: center;
   justify-content: center;
- 
+padding: 50px;
 }
 
 main div{
@@ -136,16 +145,16 @@ main div:nth-child(2){
 
 footer {
   border: 1px solid red;
-  width: 80%;
+  width: 75%;
   height: auto;
   margin: auto;
-  background-color: white;
+  background-color: green;
   display: grid;
   grid-template-columns: repeat(4,1fr);
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 20px 20px 40px 20px;
 }
 
 footer div{
@@ -178,8 +187,16 @@ footer div:nth-child(3){
 
 }
 footer div:nth-child(4){
-  background: #000000;
-
+  background: black;
+}
+footer div:nth-child(4) img{
+  width:30px;
+  position: fixed;
+  background-color: #fff;
+  right: 10%;
+  bottom: 0;
+  border-radius: 100%;
+  padding: 6px;
 }
 
 
@@ -187,8 +204,77 @@ footer div:nth-child(4){
 
 
 
+#lat_container{
+  border: 2px dotted black;
+  background: #483EFF;
+  width: 75%;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+#lat_container > div{
+  border: 3px solid black;
+  width:40% ;
+  height: 80%;
+  
+}
+#lat_container-1stChild{
+display: grid;
+grid-template-rows: repeat(3,1fr);
+gap: 10px;
+}
+#lat_container-1stChild div{
+  border: 1px solid blue;
+  width: 50%;
+  margin: auto;
+  height: auto;
+  border-radius: 6px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+justify-content: center;
+box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.39);
 
-
+}
+#lat_container-1stChild div:nth-child(1){
+  background: #BCE0F6;
+ 
+}
+#lat_container-1stChild div:nth-child(2){
+  border-color: #fff;
+  border-width: 1.5px;
+  color: #fff;
+}
+#lat_container-1stChild div:nth-child(3){
+  border-color: #fff;
+border-width: 1.5px;
+ color: #fff;
+}
+#lat_container-2ndChild{
+padding: 10px 10px 10px 20px;
+background-color: white;
+border-radius: 6px;
+position: relative;
+}
+#lat_container-2ndChild span{
+  margin-left: 10px;
+}
+#lat_container-2ndChild input{
+position: absolute;
+  right: 13px;
+  bottom:13px;
+  background-color: #000000;
+  color: #fff;
+  padding: 6px 15px 6px 15px;
+  border-radius: 6px;
+}
+#lat_container-2ndChild input:hover{
+  cursor: pointer;
+  background-color: #191e1e;
+}
 
 
 
@@ -240,10 +326,17 @@ footer div:nth-child(4){
     }
     main{
       grid-template-columns:40% 55%;
+     padding-top: 130px;
     }
     
-footer div{
+footer  div{
   margin-top: 1%;
+}
+#lat_container-1stChild div p{
+ font-size: 70%;
+}
+#lat_container-1stChild div{
+  width: 80%;
 }
   }
     
@@ -257,6 +350,7 @@ footer div{
     ></script>
   </head>
   <body>
+    <div  id="nav-parent">
     <nav class="navbar">
       <a href="#" class="navbar-logo"><img src="/images/dappr.jpg" alt=""></a>
       <ul class="navbar-menu">
@@ -279,6 +373,7 @@ footer div{
         <div class="bar"></div>
       </div>
     </nav>
+  </div>
     <main>
       <div>
         <img src="/images/image 4.png" alt="">
@@ -301,7 +396,31 @@ footer div{
       <div>
         <span>Total Passed</span>
         <span class="second_p">6,000</span>
+        <img src="/images/Vector (3).png" alt="">
       </div>
     </footer>
+    <div id="lat_container">
+          <div id="lat_container-1stChild">
+            <div> <p> YOUR INFO</p></div>
+            <div><p>BOOKMARKS</p> </div>
+            <div><p>SETTINGS</p></div>
+          </div>
+          <div id="lat_container-2ndChild">
+            <b>Your information</b>
+            <p>
+               <span><b>Name  </b>: Atul Sing</span>
+            </p>
+            <p>
+              <span><b>Email  </b>: atul@gmail.com</span>
+            </p>
+            <p>
+              <span><b>Phone  </b>: +91 8131424888</span>
+            </p>
+            <p>
+              <span><b>Marks  </b>: 500</span>
+            </p>
+            <input type="submit" value="Next &#8594;">
+          </div>
+    </div>
   </body>
 </html>
